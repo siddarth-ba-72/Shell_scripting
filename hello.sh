@@ -97,8 +97,8 @@ echo "Hello world" # This is also a comment
 # fi
 
 # 5. Files
-echo -e "Enter the name of file : \c"
-read file_name
+# echo -e "Enter the name of file : \c"
+# read file_name
 
 # if [ -e $file_name ] # -e is to check if the file exists, -f is to check if its a regular file
 # then
@@ -124,3 +124,19 @@ read file_name
 # then echo "$file_name is not empty"
 # else echo "$file_name is empty"
 # fi
+
+# 6. Appending text to a file
+echo -e "Enter the name of the file: \c"
+read filename
+
+if [ -f $filename ]
+then
+    if [ -w $filename ]
+        then
+            echo "Type some text. To quit press ctrl+D"
+            cat >> $filename
+        else
+            echo "File do not have write permissions"
+        fi
+else
+    echo "File does not exist"
