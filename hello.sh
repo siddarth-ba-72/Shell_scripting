@@ -126,17 +126,25 @@ echo "Hello world" # This is also a comment
 # fi
 
 # 6. Appending text to a file
-echo -e "Enter the name of the file: \c"
-read filename
+# echo -e "Enter the name of the file: \c"
+# read filename
 
-if [ -f $filename ]
+# if [ -f $filename ]
+# then
+#     if [ -w $filename ]
+#         then
+#             echo "Type some text. To quit press ctrl+D"
+#             cat >> $filename
+#         else
+#             echo "File do not have write permissions"
+#         fi
+# else
+#     echo "File does not exist"
+
+age=25
+if [ $age -gt 18 ] &&  [ $age -lt 30 ]
 then
-    if [ -w $filename ]
-        then
-            echo "Type some text. To quit press ctrl+D"
-            cat >> $filename
-        else
-            echo "File do not have write permissions"
-        fi
+    echo "valid age"
 else
-    echo "File does not exist"
+    echo "invalid age"
+fi
